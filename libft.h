@@ -12,6 +12,14 @@ typedef struct s_list
 	struct s_list *next;
 }	t_list;
 
+typedef struct s_list2
+{
+	char *data;
+	struct s_list2 *next;
+	struct s_list2 *parent;
+	int number;
+}	t_list2;
+
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	*ft_memset(void *s, int c, size_t n);
@@ -51,7 +59,7 @@ char *ft_strmap(char const *s, char (*f)(char));
 int ft_strequ(char const *s1, char const *s2);
 int ft_strnequ(char const *s1, char const *s2, size_t n);
 char *ft_strsub(char const *s, unsigned int start, size_t len);
-//char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strjoin(char const *s1, char const *s2);
 char *ft_strtrim(char const *s);
 char	*ft_itoa(int nbr);
 void ft_putchar(char c);
@@ -70,5 +78,6 @@ void ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void ft_lstadd(t_list **alst, t_list *new);
 int ft_tolower(int c);
 char **ft_strsplit(char const *s, char c);
+char *ft_strjoin_free(char *s1, char *s2, int opt);
 
 #endif
